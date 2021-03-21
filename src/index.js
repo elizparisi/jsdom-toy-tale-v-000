@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
     addToy = !addToy;
     if (addToy) {
       toyFormContainer.style.display = "block";
+      toyFormContainer.addEventListener('submit', event => {
+        event.preventDefault()
+        postToy(event.target)
+      })
     } else {
       toyFormContainer.style.display = "none";
     }
