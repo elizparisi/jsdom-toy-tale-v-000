@@ -22,7 +22,9 @@ function getToys() {
   fetch("http://localhost:3000/toys")
   .then(response => response.json())
   .then(toys => {
-    toys.forEach(toy => createCard(toy));
+    toys.forEach(function(toy) {
+      renderToys(toy)
+    });
   });
 }
 
